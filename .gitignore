@@ -6,6 +6,10 @@ target/
 application.yml
 src/main/resources/application.yml
 aws.yml
+*.yaml
+*.xml
+*.txt
+*.properties
 
 ### STS ###
 .apt_generated

@@ -11,27 +11,27 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
-    private final UserRepository userRepository;
-    // private final PasswordEncoder passwordEncoder;
+  private final UserRepository userRepository;
+  // private final PasswordEncoder passwordEncoder;
 
-    @Override
-    public void register(String username, String password) {
-        if (userRepository.findByUsername(username).isPresent()) {
-            throw new RuntimeException("Username is already in use");
-        }
-
-        User user = User.builder()
-                .username(username)
-                .password(password)
-                .userRole("ADMIN")
-                .build();
-
-        userRepository.save(user);
-
+  @Override
+  public void register(String username, String password) {
+    if (userRepository.findByUsername(username).isPresent()) {
+      throw new RuntimeException("Username is already in use");
     }
 
-    @Override
-    public User findByUsername(String username) {
-        return null;
-    }
+    User user = User.builder()
+        .username(username)
+        .password(password)
+        //.userRole("ADMIN")
+        .build();
+
+    userRepository.save(user);
+
+  }
+
+  @Override
+  public User findByUsername(String username) {
+    return null;
+  }
 }
