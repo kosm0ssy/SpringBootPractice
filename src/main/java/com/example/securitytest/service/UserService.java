@@ -32,4 +32,8 @@ public class UserService implements UserDetailsService {
         .build()).getId();
   }
 
+  public User findById(Long userId) {
+    return null;
+  }
+
 }
