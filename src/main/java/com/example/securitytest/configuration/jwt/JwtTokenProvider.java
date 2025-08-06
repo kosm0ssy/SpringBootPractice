@@ -34,7 +34,7 @@ public class JwtTokenProvider {
   }
 
   // 토큰을 인자로 받아 유효성 검증
-  private boolean validateToken(String token) {
+  public boolean validToken(String token) {
     try {
       // JWT 파싱할 준비하는 객체 생성
       Jwts.parser()
